@@ -53,6 +53,7 @@ public class Main {
 	    @Override
 	    public void apply(final Document document) {
 		System.out.println(document);
+		w.close();
 	    }
 	});*/
     }
@@ -67,7 +68,7 @@ public class Main {
     	cb.setOAuthAccessToken(OAUTH_ACCESS_TOKEN);
     	cb.setOAuthAccessTokenSecret(OAUTH_ACCESS_TOKEN_SECRET);
 	MongoClient mongoClient = new MongoClient();
-	MongoDatabase db = mongoClient.getDatabase("test1TBD");
+	MongoDatabase db = mongoClient.getDatabase("TBD1.0");
     	
 
     	TwitterStream twitterStream = new TwitterStreamFactory(cb.build()).getInstance();
@@ -110,7 +111,7 @@ public class Main {
 	    };
 
 	    FilterQuery fq = new FilterQuery();
-	    String keywords[] = {"hillary"};
+	    String keywords[] = {"FaunaPrimavera", "PrimaveraFauna", "FaunaPrimaveraFest", "pf2016", "cumbre del rock chileno", "LaCumbreDelRockChileno", "LaCumbreDelRockCL", "LaCumbreDelRockConTRONIC", "LaCumbreDelRockChile", "cumbredelrockcl", "LollaCL", "lollapaloozacl", "PreguntaLollaCL", "RPLollaWeekend", "Lollapalooza versión #Chile2017", "lollapaloozachile2017", "RPLolla", "Frontera2016", "FronteraFestival", "festivalfrontera", "CreamfieldsCL2016", "CreamfieldsChile", "creamfields", "creamfieldsCL", "fiiS2016", "UnaNuevaRealidad", "fiiSAntofagasta", "Defqon1Chile", "DEFQON1", "Defqon1CL", "defqon1chile2016", "DefqonChile", "DQ1CL"};
 
 	    fq.track(keywords);
 
